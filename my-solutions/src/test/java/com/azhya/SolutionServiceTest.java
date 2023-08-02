@@ -9,7 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-//import org.junit.Ignore; //used mostly for isolating test while debugging
+import org.junit.Ignore; //used mostly for isolating test while debugging
 
 import com.azhya.main.SolutionService;
 import com.azhya.util.Order;
@@ -33,5 +33,16 @@ public class SolutionServiceTest {
 		list.add(5);
 		list.add(2);
 		assertEquals(500, solutionService.findMaxProduct(list));
+	}
+	
+	@Test
+	@Order(order = 2)
+	public void findMaxProductNegativeProductCase() {
+		List<Integer> list = new ArrayList<>();
+		list.add(-100);
+		list.add(2);
+		list.add(3);
+		list.add(4);
+		assertEquals(-1200, solutionService.findMaxProduct(list));
 	}
 }
