@@ -38,6 +38,8 @@ public class SolutionService {
 		Collections.sort(list);
 		Collections.sort(copy);
 		
+		//some change here
+		
 		//2. find the three largest values in the array (now regardless of +/- signs)
 		List<Integer> maxFactors = copy.subList(copy.size() - 3, copy.size());
 		for(int num : maxFactors) {
